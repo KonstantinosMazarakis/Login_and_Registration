@@ -17,6 +17,7 @@ def new_user():
     data = {
         "first_name": request.form["first_name"],
         "last_name": request.form["last_name"],
+        "gender": request.form["gender"],
         "email": request.form["email"],
         "password" : pw_hash,
     }
