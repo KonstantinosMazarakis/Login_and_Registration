@@ -1,0 +1,37 @@
+main {
+    display: flex;
+    min-height: 200px;
+}
+
+.leftside {
+    flex:1;
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+.rightside {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+    max-height: 350px;
+}
+
+.blue {
+    color: rgb(4, 93, 194);
+}
+
+.green {
+    color: rgb(6, 100, 6);
+}
+
+.message {
+    background-color: brown;
+    color: darkgray;
+    border-radius: 30px;
+}
+
+.messageP {
+    padding: 0.7rem;
+}
