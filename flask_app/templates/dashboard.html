@@ -11,7 +11,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Hello {{first_name}}</h1>
+    <h1>Hello {{session['user_first_name']}}</h1>
     <form action="/clear_session" method="post">
     <input type="submit" value="Logout" class="btn btn-danger">
     </form>

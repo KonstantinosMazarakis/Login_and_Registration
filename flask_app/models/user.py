@@ -6,7 +6,7 @@ import re
 
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$') 
 PASSWORD_REGEX = re.compile(r'^(?=.*\d)(?=.*[A-Z])[a-zA-Z\d]{8,45}$')
-
+FIRST_LAST_NAME_REGEX = re.compile(r'^[a-zA-Z]{2,45}$')
 
 
 class User:
@@ -40,11 +40,11 @@ class User:
     @staticmethod
     def validate_user(user):
         is_valid = True
-        if len(user['first_name']) < 3:
-            flash("First name must be at least 2 characters.", 'create_user')
+        if not FIRST_LAST_NAME_REGEX.match(user['first_name']):
+            flash("First name must be at least 2 characters and only letters.", 'create_user')
             is_valid = False
-        if len(user['last_name']) < 3:
-            flash("Last name must be at least 2 characters.", 'create_user')
+        if not FIRST_LAST_NAME_REGEX.match(user['last_name']):
+            flash("Last name must be at least 2 characters and only letters.", 'create_user')
             is_valid = False
         if not EMAIL_REGEX.match(user['email']): 
             flash("Invalid email address!", 'create_user')

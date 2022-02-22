@@ -44,7 +44,9 @@ def login():
 
 @app.route("/dashboard")
 def dashboard():
-    return render_template("dashboard.html",first_name = session['user_first_name'])
+    if not "loged_in" in session:
+        return redirect("/")
+    return render_template("dashboard.html")
 
 @app.route("/clear_session", methods=["POST"])
 def clear_session():
